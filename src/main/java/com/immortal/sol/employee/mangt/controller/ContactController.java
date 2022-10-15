@@ -44,7 +44,7 @@ public class ContactController {
 	@GetMapping("/fetch/{empId}")
 	@ApiOperation(
             value = "Get contacts by employee id",
-            notes = "Returns contacts for employee specified.",
+            notes = "Returns contact details for employee specified.",
             response = ContactDetails.class)
 	public ResponseEntity<List<ContactDetails>> getContacts(@PathVariable("empId") String empId) throws NoRecordFoundException{
 		List<ContactDetails> contacts = contactService.fetchContacts(empId);
