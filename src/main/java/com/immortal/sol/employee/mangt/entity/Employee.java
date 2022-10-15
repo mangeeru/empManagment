@@ -44,6 +44,8 @@ public class Employee implements Serializable{
 	private int status;
 	@Column(name = "designation")
 	private String designation;
+	@Column(name = "experience_level")
+	private String experiencedLevel;
 	
 	@Column(name = "dept_no")
 	private Long deptNo;
@@ -165,6 +167,12 @@ public class Employee implements Serializable{
 	}
 	public void setDesignation(String designation) {
 		this.designation = designation;
+	}
+	public String getExperiencedLevel() {
+		return experiencedLevel;
+	}
+	public void setExperiencedLevel(String experiencedLevel) {
+		this.experiencedLevel = experiencedLevel;
 	}
 	@Override
 	public String toString() {

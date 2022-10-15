@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.immortal.sol.employee.mangt.util.AppCache;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -15,11 +16,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 public class EmpManagmentApplication {
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmpManagmentApplication.class, args);
-		System.out.println("-----Welcome To Employee Management-----");
+		System.out.println("|'''''''''''''''''''''''''''''''''''''''|");
+		System.out.println("|   Welcome To Employee Management      |");
+		System.out.println("'''''''''''''''''''''''''''''''''''''''''");
+		//AppCache.loadCache();
+		//System.out.println("---App cache loaded successfully---");
 	}
+	
 	
 	@Bean
 	public Docket productApi() {
