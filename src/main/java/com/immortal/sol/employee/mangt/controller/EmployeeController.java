@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.immortal.sol.employee.mangt.entity.Employee;
+import com.immortal.sol.employee.mangt.exception.ApplicationServiceException;
 import com.immortal.sol.employee.mangt.exception.NoRecordFoundException;
 import com.immortal.sol.employee.mangt.service.EmployeeServiceInt;
 
@@ -27,7 +28,7 @@ public class EmployeeController {
 	private EmployeeServiceInt employeeService;
 	
 	@PostMapping("/add")
-	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
+	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) throws ApplicationServiceException{
 		final Employee emp = employeeService.saveEmployee(employee);
 		return ResponseEntity.ok(emp);
 	}
@@ -43,7 +44,7 @@ public class EmployeeController {
 		final Employee updateemp = employeeService.updateEmployee(employee);
 		return ResponseEntity.ok(updateemp);
 	}
-	
+
 	@GetMapping("/fetch/{empId}")
 	public ResponseEntity<Employee> getEmployee(@PathVariable(value = "empId") String empId) throws NoRecordFoundException{
 		Employee emp = employeeService.fetchEMployee(empId);

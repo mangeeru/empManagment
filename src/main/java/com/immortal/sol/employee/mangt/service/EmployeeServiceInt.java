@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import com.immortal.sol.employee.mangt.entity.Employee;
-import com.immortal.sol.employee.mangt.exception.NoRecordFoundException;
+import com.immortal.sol.employee.mangt.exception.ApplicationServiceException;
 
 public interface EmployeeServiceInt {
 	
-	public Employee saveEmployee(Employee employee);
+	public Employee saveEmployee(Employee employee) throws ApplicationServiceException;
 	
 	public Employee updateEmployee(Employee employee);
 	
